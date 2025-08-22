@@ -34,19 +34,20 @@
       <h3>History</h3>
       <ul id="list" class="list"></ul>
       <h3>Add new transaction</h3>
-      <form id="form">
+      <form method="POST" id="form">
+        {% csrf_token %}
         <div class="form-control">
           <label for="text">Description</label>
-          <input type="text" id="text" placeholder="Enter description..." />
+          <input type="text" name="description" id="text" placeholder="Enter description..." />
         </div>
         <div class="form-control">
           <label for="amount"
             >Amount <br />
             <small>(-100 = expense, 100 = income)</small></label
           >
-          <input type="number" id="amount" placeholder="Enter amount..." />
+          <input type="number" name="amount" id="amount" placeholder="Enter amount..." />
         </div>
-        <button class="btn">Add transaction</button>
+        <button class="btn" type="submit">Add transaction</button>
       </form>
     </div>
     <!-- Notification -->
