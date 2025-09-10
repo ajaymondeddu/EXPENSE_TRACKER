@@ -6,6 +6,9 @@ class CurrentBalance(models.Model):
     current_balance = models.FloatField(default=0)
 
 
+    def __str__(self):
+        return str(self.current_balance)
+
 class TrackingHistory(models.Model):
     current_balance = models.ForeignKey(CurrentBalance, on_delete= models.CASCADE)
     amount = models.FloatField()
